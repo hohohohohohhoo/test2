@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.dw.review">
+
+
+	<select id="list" resultType="ReviewDTO">
+		SELECT * FROM tbl_review WHERE iId = #{iId}
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO tbl_review 
+		(rno, iId, rtitle, rcontent)
+		VALUES
+		(seq_review_rno.NEXTVAL, #{iId}, #{rtitle}, #{rcontent})
+	
+	</insert>
+
+
+</mapper>

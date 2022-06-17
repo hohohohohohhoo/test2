@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.dw.item">
+  
+  <select id="read" resultType="itemDTO">
+  
+  SELECT * FROM tbl_item WHERE iId = #{iId}
+  
+  </select>
+  
+  
+  <insert id="insert">
+  
+  INSERT INTO tbl_item (iId, iName, iPrice, iDc, iCount, filename) 
+  VALUES (#{iId}, #{iName}, #{iPrice}, #{iDc}, #{iCount}, #{filename})
+  
+  </insert>
+  
+  <insert id="upload">
+  INSERT INTO itemfileupload (iId, filename) VALUES (#{iId},#{filename})
+  </insert>
+  
+  <select id="list" resultType="ItemDTO">
+  
+  SELECT * FROM tbl_item
+  
+  </select>
+  
+  <select id="getfile" resultType="string">
+  
+  SELECT * FROM itemfileupload WHERE iId = #{iId}
+  
+  </select>
+  
+</mapper>
