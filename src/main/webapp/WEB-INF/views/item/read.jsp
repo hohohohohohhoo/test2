@@ -19,6 +19,8 @@
 </style>
 </head>
 <body>
+<jsp:include page="../common/header.jsp"/>
+
 <div class="jumbotron">
    <h1 class="text-center">상품 상세 보기</h1>
 </div>
